@@ -1,7 +1,131 @@
-h1{
-	text-align: center;
-	line-height: 50%;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-p{
+
+body {
+	font-family: Arial, sans-serif;
+	min-height: 100vh;
+}
+
+.container {
+	display: flex;
+	min-height: 100vh;
+	position: relative;
+}
+
+.container h1 {
+	color: black;
+}
+
+.main-content {
+	flex: 1;
+	position: relative;
+}
+
+.background-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+}
+
+.blur-background {
+	width: 100vw;
+	height: auto;
+	object-fit: cover;
+	filter: blur(5px);
+}
+
+.content {
+	position: relative;
+	z-index: 1;
+	padding: 40px;
+	color: white;
 	text-align: center;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.button {
+	margin-top: 20px;
+}
+
+.button button {
+	background: linear-gradient(45deg, #8fd3f4, #6CC6CB);
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 10px 5px;
+	cursor: pointer;
+	border-radius: 25px;
+	transition: transform 0.3s, box-shadow 0.3s;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button button:active {
+	transform: translateY(0);
+}
+
+.button a {
+	color: white;
+	text-decoration: none;
+}
+
+#wx {
+	border-style: solid;
+	border-color: black;
+}
+
+#update {
+	color: black;
+	font-size: 20px
+}
+
+@media (max-width: 768px) {
+	.blur-background {
+		width: 100vw;
+		height: 100vh;
+		object-fit: cover;
+		filter: blur(5px);
+	}
+
+	body {
+		max-width: 100vw;
+		overflow-x: hidden;
+	}
+
+	.content {
+		padding: 1vw;
+	}
+
+	#wx {
+		width: 50vw;
+	}
+
+	#update {
+		color: white;
+		font-size: 20px
+	}
+}
+
+@media (max-width: 500px) {
+	#wx {
+		width: 75vw;
+	}
 }
