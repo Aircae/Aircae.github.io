@@ -19,12 +19,7 @@ function closeSidebarOutside(event) {
 	}
 }
 
-document.getElementById('epubBtn').addEventListener('click', function() {
-	window.location.href = '掉入异世界也要努力活下去.epub';
-});
-
 document.getElementById('txtBtn').addEventListener('click', downloadTXT);
-
 
 async function downloadTXT() {
 	const downloadBtn = document.getElementById('txtBtn');
